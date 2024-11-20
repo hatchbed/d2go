@@ -54,7 +54,7 @@ def get_config_file(config_path):
         "d2go.model_zoo", os.path.join("configs", config_path)
     )
     if not os.path.exists(cfg_file):
-        raise RuntimeError("{} not available in Model Zoo!".format(config_path))
+        raise RuntimeError("{} not available in Model Zoo: {}".format(config_path, config_path))
     return cfg_file
 
 
