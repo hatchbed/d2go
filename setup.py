@@ -81,7 +81,7 @@ if __name__ == "__main__":
             "d2go": [
                 "LICENSE",
             ],
-            "d2go.configs": d2go_gather_files("configs", "configs", "**/*.yaml"),
+            "d2go.model_zoo": d2go_gather_files("configs", "configs", "**/*.yaml"),
             "d2go.tools": d2go_gather_files("tools", "tools", "**/*.py"),
             "d2go.tests": d2go_gather_files("tests", "tests", "**/*helper.py"),
         },
