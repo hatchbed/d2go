@@ -43,6 +43,7 @@ def d2go_gather_files(dst_module, file_path, extension="*") -> List[str]:
     Return a list of files to include in d2go submodule. Copy over the corresponding files.
     """
     # Use absolute paths while symlinking.
+    print(f'd2go_gather_files({dst_module}, {file_path}, {extension})')
     source_configs_dir = path.join(path.dirname(path.realpath(__file__)), file_path)
     destination = path.join(path.dirname(path.realpath(__file__)), "d2go", dst_module)
     # Symlink the config directory inside package to have a cleaner pip install.
@@ -62,6 +63,7 @@ def d2go_gather_files(dst_module, file_path, extension="*") -> List[str]:
             shutil.copytree(source_configs_dir, destination)
 
     config_paths = glob.glob(os.path.join(file_path + extension), recursive=True)
+    print(f'config_paths = {config_paths}')
     return config_paths
 
 
